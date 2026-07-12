@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - AI Fake News Detector</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+</head>
+<body class="page-about">
+    <div class="page-bg"></div>
+    <div class="page-bg-about" aria-hidden="true"></div>
+    <header class="navbar glass-card">
+        <div class="brand">AI Fake News Detector</div>
+        <nav class="nav-links">
+            <a href="/">Home</a>
+            <a href="/predict-page">Predict</a>
+            <a href="/about">About</a>
+        </nav>
+        <div class="auth-actions">
+            {% if username %}
+                <span class="user-pill">Hi, {{ username }}</span>
+                <button class="ghost-btn" data-auth-action="logout">Logout</button>
+            {% else %}
+                <button class="ghost-btn" data-open-modal="login">Login</button>
+                <button class="primary-btn" data-open-modal="signup">Signup</button>
+            {% endif %}
+        </div>
+    </header>
+
+    <main class="about-page">
+        <section class="about-hero" aria-labelledby="about-hero-heading">
+            <div class="about-hero-inner">
+                <p class="about-badge">Intelligence · Trust · Clarity</p>
+                <h1 id="about-hero-heading">Detect Fake News with the Power of AI</h1>
+                <p class="about-hero-sub">
+                    Cut through noise and misinformation with a sleek fact-checking experience.
+                    Our system blends machine learning with optional AI verification so you can
+                    judge headlines and claims with confidence—instantly, from your browser.
+                </p>
+                <div class="about-hero-cta">
+                    <a href="/predict-page" class="primary-btn">Try prediction</a>
+                    <a href="/" class="ghost-btn about-hero-link">Back to home</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="about-banner-wrap">
+            <div class="about-banner" role="img" aria-label="Abstract AI neural network visualization">
+                <div class="about-banner-glow" aria-hidden="true"></div>
+                <svg viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="abGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#5b82ff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#805fff;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="abGrad2" x1="0%" y1="100%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#35d08c;stop-opacity:0.9" />
+                            <stop offset="100%" style="stop-color:#5b82ff;stop-opacity:0.6" />
+                        </linearGradient>
+                        <filter id="abGlow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="4" result="blur" />
+                            <feMerge>
+                                <feMergeNode in="blur" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <rect x="40" y="30" width="720" height="160" rx="20" fill="rgba(11,16,34,0.4)" stroke="url(#abGrad1)" stroke-width="1" opacity="0.9" />
+                    <g stroke="rgba(91,130,255,0.35)" stroke-width="1.2" fill="none">
+                        <line x1="120" y1="110" x2="280" y2="75" />
+                        <line x1="120" y1="110" x2="280" y2="110" />
+                        <line x1="120" y1="110" x2="280" y2="145" />
+                        <line x1="280" y1="75" x2="440" y2="90" />
+                        <line x1="280" y1="110" x2="440" y2="110" />
+                        <line x1="280" y1="145" x2="440" y2="130" />
+                        <line x1="440" y1="90" x2="600" y2="100" />
+                        <line x1="440" y1="110" x2="600" y2="110" />
+                        <line x1="440" y1="130" x2="600" y2="120" />
+                    </g>
+                    <circle class="about-node" cx="120" cy="110" r="14" fill="url(#abGrad1)" filter="url(#abGlow)" />
+                    <circle class="about-node" cx="280" cy="75" r="10" fill="url(#abGrad2)" />
+                    <circle class="about-node" cx="280" cy="110" r="12" fill="url(#abGrad1)" filter="url(#abGlow)" />
+                    <circle class="about-node" cx="280" cy="145" r="10" fill="url(#abGrad2)" />
+                    <circle class="about-node" cx="440" cy="90" r="9" fill="#5b82ff" opacity="0.9" />
+                    <circle class="about-node" cx="440" cy="110" r="11" fill="url(#abGrad1)" filter="url(#abGlow)" />
+                    <circle class="about-node" cx="440" cy="130" r="9" fill="#35d08c" opacity="0.85" />
+                    <circle class="about-node" cx="600" cy="100" r="8" fill="#805fff" />
+                    <circle class="about-node" cx="600" cy="110" r="10" fill="url(#abGrad1)" filter="url(#abGlow)" />
+                    <circle class="about-node" cx="600" cy="120" r="8" fill="#5b82ff" />
+                    <text x="400" y="205" text-anchor="middle" fill="#7a8aad" font-family="Inter, sans-serif" font-size="13" font-weight="600" letter-spacing="0.15em">AI · NLP · VERIFICATION</text>
+                </svg>
+            </div>
+        </div>
+
+        <section class="about-features" aria-labelledby="features-heading">
+            <h2 id="features-heading" class="about-section-title">Why teams trust this stack</h2>
+            <p class="about-section-lead">Glassmorphism, motion, and clarity—built for modern fact-checking workflows.</p>
+            <div class="about-feature-grid">
+                <article class="about-feature-card">
+                    <div class="about-feature-icon" aria-hidden="true">🧠</div>
+                    <h3>AI-Powered Detection</h3>
+                    <p>Optional LLM verification interprets claims with structured reasoning when API keys are configured.</p>
+                </article>
+                <article class="about-feature-card">
+                    <div class="about-feature-icon" aria-hidden="true">⚡</div>
+                    <h3>Real-Time Verification</h3>
+                    <p>Submit a headline and receive a verdict in seconds—ideal for demos, coursework, and rapid triage.</p>
+                </article>
+                <article class="about-feature-card">
+                    <div class="about-feature-icon" aria-hidden="true">🔍</div>
+                    <h3>Fake vs Real Analysis</h3>
+                    <p>Clear labels, confidence, and explanations so users understand why a claim was flagged.</p>
+                </article>
+                <article class="about-feature-card">
+                    <div class="about-feature-icon" aria-hidden="true">🚀</div>
+                    <h3>Fast Prediction System</h3>
+                    <p>Lightweight Flask backend with a responsive UI—smooth on desktop and mobile.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="about-stats" aria-labelledby="stats-heading">
+            <h2 id="stats-heading" class="about-section-title">Impact at a glance</h2>
+            <p class="about-section-lead">Metrics reflect the trained classifier on curated datasets; your mileage varies with data and prompts.</p>
+            <div class="about-stats-grid">
+                <div class="about-stat">
+                    <div class="about-stat-value">92%+</div>
+                    <div class="about-stat-label">Accuracy on benchmark-style news splits</div>
+                </div>
+                <div class="about-stat">
+                    <div class="about-stat-value">Real-Time</div>
+                    <div class="about-stat-label">News analysis when News API keys are enabled</div>
+                </div>
+                <div class="about-stat">
+                    <div class="about-stat-value">AI + NLP</div>
+                    <div class="about-stat-label">Powered by text preprocessing, TF‑IDF, and models</div>
+                </div>
+                <div class="about-stat">
+                    <div class="about-stat-value">Instant</div>
+                    <div class="about-stat-label">Prediction feedback in one request cycle</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-how" aria-labelledby="how-heading">
+            <h2 id="how-heading" class="about-section-title">How it works</h2>
+            <p class="about-section-lead">Four crisp steps from paste to verdict—no clutter, no guesswork.</p>
+            <div class="about-steps">
+                <div class="about-step">
+                    <h4>User enters news headline</h4>
+                    <p>Paste any claim, headline, or short article snippet into the analyzer.</p>
+                </div>
+                <div class="about-step">
+                    <h4>NLP processes the text</h4>
+                    <p>Cleaning, tokenization, and vectorization prepare the signal for scoring.</p>
+                </div>
+                <div class="about-step">
+                    <h4>AI model analyzes the claim</h4>
+                    <p>Classifier or connected AI evaluates patterns and optional web context.</p>
+                </div>
+                <div class="about-step">
+                    <h4>System predicts Real or Fake</h4>
+                    <p>Verdict, confidence, and rationale return to the UI in a single view.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-mission" aria-labelledby="mission-heading">
+            <h2 id="mission-heading" class="about-section-title">Our mission</h2>
+            <div class="about-mission-inner">
+                <p>
+                    Our mission is to reduce misinformation using Artificial Intelligence and modern fact-checking technology.
+                </p>
+            </div>
+        </section>
+
+        <footer class="about-tech-footer">
+            <p><strong>Built with</strong> Python, Flask, AI, HTML, CSS, and JavaScript.</p>
+        </footer>
+    </main>
+
+    <div class="modal-overlay hidden" id="authModalOverlay">
+        <div class="modal-card" id="authModal">
+            <button class="modal-close" id="closeAuthModal">&times;</button>
+
+            <div id="loginFormWrap" class="auth-form-wrap hidden">
+                <h3>Welcome Back</h3>
+                <p>Login to manage your account.</p>
+                <input type="email" id="loginEmail" placeholder="Email">
+                <input type="password" id="loginPassword" placeholder="Password">
+                <p class="form-error" id="loginError"></p>
+                <button class="primary-btn full-width" id="loginSubmitBtn">Login</button>
+            </div>
+
+            <div id="signupFormWrap" class="auth-form-wrap hidden">
+                <h3>Create Account</h3>
+                <p>Signup is optional. Prediction works without login too.</p>
+                <input type="text" id="signupUsername" placeholder="Username">
+                <input type="email" id="signupEmail" placeholder="Email">
+                <input type="password" id="signupPassword" placeholder="Password">
+                <p class="form-error" id="signupError"></p>
+                <button class="primary-btn full-width" id="signupSubmitBtn">Signup</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}?v=10"></script>
+</body>
+</html>

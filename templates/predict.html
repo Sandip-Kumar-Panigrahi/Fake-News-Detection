@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-store, max-age=0">
+    <title>AI Fake News Detector</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="page-predict">
+    <div class="page-bg page-bg-enhanced"></div>
+    <header class="navbar glass-card nav-glow">
+        <div class="brand">AI Fake News Detector</div>
+        <nav class="nav-links">
+            <a href="/">Home</a>
+            <a href="/predict-page">Predict</a>
+            <a href="/about">About</a>
+        </nav>
+        <div class="auth-actions">
+            {% if username %}
+                <span class="user-pill">Hi, {{ username }}</span>
+                <button class="ghost-btn" data-auth-action="logout">Logout</button>
+            {% else %}
+                <button class="ghost-btn" data-open-modal="login">Login</button>
+                <button class="primary-btn nav-signup" data-open-modal="signup">Signup</button>
+            {% endif %}
+        </div>
+    </header>
+
+    <div class="predict-workspace fade-in">
+        <div class="predict-main">
+            <section class="predict-panel glass-card panel-glow">
+                <div class="panel-head">
+                    <h2>Analyze News</h2>
+                </div>
+                <p class="sub-text">Paste any claim or headline — we verify factual accuracy with AI and recent news.</p>
+                <textarea id="newsInput" placeholder="e.g. India is a country; IPL started in 2026; ..." rows="10"></textarea>
+                <button id="predictBtn" class="primary-btn btn-analyze btn-glow" type="button">Analyze News</button>
+
+                <div class="loading-wrap hidden" id="loadingWrap">
+                    <div class="spinner spinner-glow"></div>
+                    <span class="typing-label" id="typingLabel">Verifying facts...</span>
+                </div>
+
+                <p id="errorText" class="error-text"></p>
+                <p id="aiWarningText" class="error-text ai-warning hidden"></p>
+            </section>
+
+            <section id="resultBox" class="result-card glass-card hidden">
+                <h3>Result</h3>
+                <p class="result-line">
+                    <span id="resultEmoji">-</span>
+                    <strong id="predictionLabel">-</strong>
+                </p>
+                <p class="confidence-text">Confidence: <span id="confidenceValue">0</span>%</p>
+                <div class="progress-track">
+                    <div class="progress-fill" id="confidenceBar"></div>
+                </div>
+                <div class="analysis-grid">
+                    <p><strong>AI verdict:</strong> <span id="aiResultValue">-</span></p>
+                    <p><strong>News sources:</strong> <span id="sourcesValue">-</span></p>
+                    <p><strong>Final decision:</strong> <span id="finalDecisionValue">-</span></p>
+                    <p><strong>Status:</strong> <span id="statusValue" class="status-pill">-</span></p>
+                    <p class="explanation-block"><strong>Explanation:</strong> <span id="explanationText">-</span></p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="modal-overlay hidden" id="authModalOverlay">
+        <div class="modal-card" id="authModal">
+            <button class="modal-close" id="closeAuthModal">&times;</button>
+
+            <div id="loginFormWrap" class="auth-form-wrap hidden">
+                <h3>Welcome Back</h3>
+                <p>Login to manage your account.</p>
+                <input type="email" id="loginEmail" placeholder="Email">
+                <input type="password" id="loginPassword" placeholder="Password">
+                <p class="form-error" id="loginError"></p>
+                <button class="primary-btn full-width" id="loginSubmitBtn">Login</button>
+            </div>
+
+            <div id="signupFormWrap" class="auth-form-wrap hidden">
+                <h3>Create Account</h3>
+                <p>Signup is optional. Prediction works without login too.</p>
+                <input type="text" id="signupUsername" placeholder="Username">
+                <input type="email" id="signupEmail" placeholder="Email">
+                <input type="password" id="signupPassword" placeholder="Password">
+                <p class="form-error" id="signupError"></p>
+                <button class="primary-btn full-width" id="signupSubmitBtn">Signup</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}?v=17"></script>
+</body>
+</html>
