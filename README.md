@@ -154,7 +154,4 @@ Set `OPENAI_API_KEY` and/or `GOOGLE_API_KEY` (or `GEMINI_API_KEY`) in the enviro
 - Optional auth users are stored in SQLite table `users` with hashed password.
 - You can set custom session key with env var `FLASK_SECRET_KEY`.
 
-## Student Project Disclaimer
 
-This project is intentionally simple and made in beginner style for academic learning.
-The focus is understanding ML workflow and web integration, not production-level architecture.
