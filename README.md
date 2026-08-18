@@ -130,7 +130,7 @@ http://127.0.0.1:5000
 
 ### Optional backend assist (no UI change)
 
-Set `OPENAI_API_KEY` and/or `GOOGLE_API_KEY` (or `GEMINI_API_KEY`) in the environment to enable optional enhancement. If unset, the app uses only country-aware heuristics after the ML model. No provider name is shown in the UI.
+Set `OPENAI_API_KEY` and/or `GOOGLE_API_KEY` (or `GEMINI_API_KEY`) in the environment to enable optional enhancement. If unset, the app uses only country-aware heuristics after the ML model. No provider name is shown in the UI....
 
 - `POST /train`
   - retrains model and reloads saved files
