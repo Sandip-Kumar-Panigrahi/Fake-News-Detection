@@ -1,7 +1,7 @@
 # Fake News Detection using Machine Learning and Python
 
 This is a simple full-stack final year project that predicts whether a news text is **Fake** or **Real**.
-The project uses a machine learning model with a Flask backend and basic HTML/CSS/JS frontend.
+The project uses a machine learning model with a Flask backend and basic HTML/CSS/JS frontend..
 
 ## Project Overview
 
