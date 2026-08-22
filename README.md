@@ -152,6 +152,6 @@ Set `OPENAI_API_KEY` and/or `GOOGLE_API_KEY` (or `GEMINI_API_KEY`) in the enviro
 - Prediction confidence is shown in UI.
 - Every prediction is stored in SQLite table `prediction_logs`.
 - Optional auth users are stored in SQLite table `users` with hashed password.
-- You can set custom session key with env var `FLASK_SECRET_KEY`.
+- You can set custom session key with env var `FLASK_SECRET_KEY`.....
 
 
